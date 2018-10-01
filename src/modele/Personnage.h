@@ -45,6 +45,9 @@ public:
 			this->nom = nom;
 	}
 
+	void ramasser(Element* element){
+		this->element = element;
+	}
 
 
 protected:
