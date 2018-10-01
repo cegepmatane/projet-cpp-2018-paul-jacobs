@@ -8,10 +8,15 @@
 #ifndef PACKMAN_H_
 #define PACKMAN_H_
 
-class Packman {
+#include "Personnage.h"
+
+class Pacman : public Personnage {
 public:
-	Packman();
-	virtual ~Packman();
+	Pacman();
+	virtual ~Pacman();
+
+private:
+
 };
 
 #endif /* PACKMAN_H_ */

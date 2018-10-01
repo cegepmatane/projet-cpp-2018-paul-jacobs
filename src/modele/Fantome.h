@@ -7,8 +7,9 @@
 
 #ifndef FANTOME_H_
 #define FANTOME_H_
+#include "Personnage.h"
 
-class Fantome {
+class Fantome : public Personnage{
 public:
 	Fantome();
 	virtual ~Fantome();

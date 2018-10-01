@@ -7,7 +7,7 @@
 //============================================================================
 
 #include <iostream>
-#include "Personnage.h"
+#include "modele/Personnage.h"
 using namespace std;
 
 int main() {

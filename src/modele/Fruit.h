@@ -7,8 +7,9 @@
 
 #ifndef FRUIT_H_
 #define FRUIT_H_
+#include "Element.h"
 
-class Fruit {
+class Fruit : public Element {
 public:
 	Fruit();
 	virtual ~Fruit();

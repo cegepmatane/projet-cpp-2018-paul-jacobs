@@ -7,8 +7,9 @@
 
 #ifndef PACKGUM_H_
 #define PACKGUM_H_
+#include "Element.h"
 
-class Packgum {
+class Packgum : public Element{
 public:
 	Packgum();
 	virtual ~Packgum();

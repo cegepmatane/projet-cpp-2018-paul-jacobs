@@ -11,6 +11,7 @@
 
 #ifndef PERSONNAGE_H_
 #define PERSONNAGE_H_
+#include "Element.h"
 
 
 using namespace std;
@@ -49,6 +50,7 @@ public:
 protected:
 	int age;
 	string nom;
+	Element* element;
 };
  /* end namespace*/
 

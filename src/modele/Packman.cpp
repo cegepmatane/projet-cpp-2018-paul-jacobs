@@ -5,14 +5,14 @@
  *      Author: 1832522
  */
 
-#include "Packman.h"
+#include "Pacman.h"
 
-Packman::Packman() {
+Pacman::Pacman() {
 	// TODO Auto-generated constructor stub
 
 }
 
-Packman::~Packman() {
+Pacman::~Pacman() {
 	// TODO Auto-generated destructor stub
 }
 
