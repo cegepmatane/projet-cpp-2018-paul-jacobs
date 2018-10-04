@@ -13,6 +13,8 @@
 class Pacman : public Personnage {
 public:
 	Pacman();
+	Pacman(int vie, int tailleDeBouche);
+	Pacman(int vie, int tailleDeBouche, string pnom, Element* pelement, int ppositionX, int ppositionY);
 	virtual ~Pacman();
 
 	const string sauvegarder() const{
@@ -22,12 +24,15 @@ public:
 					<< "<Element>" << element->sauvegarder() << "</Element>"
 					<< "<positionX>" << positionX << "</positionX>"
 					<< "<positionY>" << positionY << "</positionY>"
+					<< "<vie>" << vie << "</vie>"
+					<< "<tailleDeBouche>" << tailleDeBouche << "</tailleDeBouche>"
 					<< "</personnage>" << endl;
 			return affichage.str();
 		}
 
 private:
-
+	int vie;
+	int tailleDeBouche;
 };
 
 #endif /* PACKMAN_H_ */

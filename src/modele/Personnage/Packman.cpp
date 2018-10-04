@@ -8,11 +8,27 @@
 #include "Pacman.h"
 
 Pacman::Pacman() {
-	// TODO Auto-generated constructor stub
+		vie = 0;
+		tailleDeBouche = 0;
+}
+
+
+Pacman::Pacman(int pvie, int ptailleDeBouche) {
+		vie = pvie;
+		tailleDeBouche = ptailleDeBouche;
+}
+
+
+Pacman::Pacman(int pvie, int ptailleDeBouche, string pnom, Element* pelement, int ppositionX, int ppositionY) {
+		nom=pnom;
+		element = pelement;
+		positionX = ppositionX;
+		positionY = ppositionY;
+		vie = pvie;
+		tailleDeBouche = ptailleDeBouche;
 
 }
 
 Pacman::~Pacman() {
-	// TODO Auto-generated destructor stub
 }
 
