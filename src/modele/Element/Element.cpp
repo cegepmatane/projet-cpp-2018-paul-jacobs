@@ -8,13 +8,25 @@
 #include "Element.h"
 
 Element::Element() {
-	// TODO Auto-generated constructor stub
 	return;
+	this->effet="";
+	this->puissance=0;
+}
 
+Element::Element(string effet) {
+	return;
+	this->effet=effet;
+	this->puissance=0;
+}
+
+
+Element::Element(string effet, int puissance) {
+	return;
+	this->effet=effet;
+	this->puissance=puissance;
 }
 
 Element::~Element() {
-	// TODO Auto-generated destructor stub
 	return;
 }
 

@@ -15,7 +15,7 @@ using namespace std;
 int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 
-	Personnage personnageSansPointeur(10,"packman");
+	Personnage personnageSansPointeur("packman");
 	//cout << personnageSansPointeur.afficher() << endl;
 
 	ofstream fichierPersonnage;
