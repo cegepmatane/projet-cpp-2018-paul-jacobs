@@ -9,10 +9,12 @@
 
 Element::Element() {
 	// TODO Auto-generated constructor stub
+	return;
 
 }
 
 Element::~Element() {
 	// TODO Auto-generated destructor stub
+	return;
 }
 
