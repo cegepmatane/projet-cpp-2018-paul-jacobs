@@ -29,7 +29,7 @@ public:
 			return affichage.str();
 		}
 
-private:
+protected:
 	string effet;
 	int puissance;
 };
