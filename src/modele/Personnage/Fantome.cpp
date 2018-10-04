@@ -8,10 +8,19 @@
 #include "Fantome.h"
 
 Fantome::Fantome() {
-	// TODO Auto-generated constructor stub
-
 }
 
+Fantome::Fantome(string couleur) {
+	this->couleur=couleur;
+}
+
+Fantome::Fantome(string pcouleur, string pnom, Element* pelement, int ppositionX, int ppositionY) {
+	nom=pnom;
+	element = pelement;
+	positionX = ppositionX;
+	positionY = ppositionY;
+	couleur = pcouleur;
+}
 Fantome::~Fantome() {
 	// TODO Auto-generated destructor stub
 }

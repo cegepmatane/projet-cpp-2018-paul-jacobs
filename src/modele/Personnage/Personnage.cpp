@@ -9,7 +9,6 @@
 using namespace std;
 
 Personnage::Personnage() {
-	// TODO Auto-generated constructor stub
 	this->nom="inconnu";
 	this->element = nullptr;
 	this->positionX = 0;

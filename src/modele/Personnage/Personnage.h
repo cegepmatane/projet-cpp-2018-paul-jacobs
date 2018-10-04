@@ -47,13 +47,6 @@ public:
 		this->element = element;
 	}
 
-	void exporter(){
-		//ofstream fichierPersonnage;
-		//fichierPersonnage.open("data/personage.json");
-	}
-
-	//void charger()
-
 
 protected:
 	string nom;
