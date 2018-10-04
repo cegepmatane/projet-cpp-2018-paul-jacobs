@@ -8,11 +8,13 @@
 #include "Fruit.h"
 
 Fruit::Fruit() {
-	// TODO Auto-generated constructor stub
+}
 
+Fruit::Fruit(string peffet, int ppuissance) {
+	effet=peffet;
+	puissance=ppuissance;
 }
 
 Fruit::~Fruit() {
-	// TODO Auto-generated destructor stub
 }
 

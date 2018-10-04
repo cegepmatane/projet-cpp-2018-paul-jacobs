@@ -8,11 +8,16 @@
 #include "Packgum.h"
 
 Packgum::Packgum() {
-	// TODO Auto-generated constructor stub
+	effet="";
+	puissance=0;
 
 }
 
+Packgum::Packgum(string peffet, int ppuissance){
+	effet=peffet;
+	puissance=ppuissance;
+}
+
 Packgum::~Packgum() {
-	// TODO Auto-generated destructor stub
 }
 

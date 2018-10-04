@@ -12,7 +12,18 @@
 class Fruit : public Element {
 public:
 	Fruit();
+	Fruit(string effet, int puissance);
 	virtual ~Fruit();
+
+	const string sauvegarder() const{
+				stringstream affichage;
+				affichage << "<element>"
+						<< "<effet>" << effet << "</effet>"
+						<< "<puissance>" << puissance << "</puissance>"
+						<< "</element>"
+						<< endl;
+				return affichage.str();
+			}
 };
 
 #endif /* FRUIT_H_ */
