@@ -20,7 +20,7 @@ int main() {
 
 	ofstream fichierPersonnage;
 	fichierPersonnage.open("data//personnage.json");
-	fichierPersonnage << "test";
+	fichierPersonnage << "test" << endl << "test";
 	fichierPersonnage.close();
 	cout << "ecriture dans fichier";
 	return 0;

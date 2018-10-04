@@ -22,6 +22,5 @@ Fantome::Fantome(string pcouleur, string pnom, Element* pelement, int ppositionX
 	couleur = pcouleur;
 }
 Fantome::~Fantome() {
-	// TODO Auto-generated destructor stub
 }
 

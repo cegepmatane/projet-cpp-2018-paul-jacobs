@@ -31,5 +31,5 @@ Personnage::Personnage(string nom, Element* element, int positionX, int position
 
 }
 Personnage::~Personnage() {
-	// TODO Auto-generated destructor stub
+	delete element;
 }
