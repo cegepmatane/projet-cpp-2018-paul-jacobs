@@ -17,12 +17,10 @@ public:
 
 	const string sauvegarder() const{
 				stringstream affichage;
-				// TODO ferrmer balise
-				affichage << "<element>"
-						<< "<effet>" << effet << "</effet>"
-						<< "<puissance>" << puissance << "</puissance>"
-						<< "</element>"
-						<< endl;
+				affichage << "<packgum>" << endl
+						<< "<effet>" << effet << "</effet>" << endl
+						<< "<puissance>" << puissance << "</puissance>" << endl
+						<< "</packgum>";
 				return affichage.str();
 			}
 };

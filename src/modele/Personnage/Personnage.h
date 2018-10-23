@@ -7,6 +7,7 @@
 
 #include <string>
 #include <sstream>
+#include <iostream>
 
 
 #ifndef PERSONNAGE_H_
@@ -25,13 +26,18 @@ public:
 	virtual ~Personnage();
 
 	const string sauvegarder() const{
+		cout << "ouverture du fichier ";
 		stringstream affichage;
-		affichage << "<personnage>"
-				<< "<nom>" << nom << "</nom>"
-				<< "<Element>" << element->sauvegarder() << "</Element>"
-				<< "<positionX>" << positionX << "</positionX>"
-				<< "<positionY>" << positionY << "</positionY>"
-				<< "</personnage>" << endl;
+		string elementString = "";
+		if (element){
+			elementString = element->sauvegarder();
+		}
+		affichage << "<personnage>" << endl
+				<< "<nom>" << nom << "</nom>" << endl
+				<< "<Element>" << elementString << "</Element>" << endl
+				<< "<positionX>" << positionX << "</positionX>" << endl
+				<< "<positionY>" << positionY << "</positionY>" << endl
+				<< "</personnage>";
 		return affichage.str();
 	}
 

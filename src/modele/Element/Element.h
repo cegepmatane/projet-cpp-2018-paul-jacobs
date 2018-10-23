@@ -22,12 +22,10 @@ public:
 
 	const string sauvegarder() const{
 			stringstream affichage;
-			// TODO ferrmer balise
-			affichage << "<element>"
-					<< "<effet>" << effet << "</effet>"
-					<< "<puissance>" << puissance << "</puissance>"
-					<< "</element>"
-					<< endl;
+			affichage << "<element>" << endl
+					<< "<effet>" << effet << "</effet>" << endl
+					<< "<puissance>" << puissance << "</puissance>" << endl
+					<< "</element>";
 			return affichage.str();
 		}
 

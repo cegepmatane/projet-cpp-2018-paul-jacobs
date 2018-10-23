@@ -18,13 +18,18 @@ public:
 
 	const string sauvegarder() const{
 			stringstream affichage;
-			affichage << "<fantome>"
-					<< "<nom>" << nom << "</nom>"
-					<< "<Element>" << element->sauvegarder() << "</Element>"
-					<< "<positionX>" << positionX << "</positionX>"
-					<< "<positionY>" << positionY << "</positionY>"
-					<< "<couleur>" << couleur << "</couleur>"
-					<< "</personnage>" << endl;
+			string elementString = "";
+			if (element){
+				elementString = element->sauvegarder();
+			}
+
+			affichage << "<fantome>" << endl
+					<< "<nom>" << nom << "</nom>" << endl
+					<< "<Element>" << elementString << "</Element>" << endl
+					<< "<positionX>" << positionX << "</positionX>" << endl
+					<< "<positionY>" << positionY << "</positionY>" << endl
+					<< "<couleur>" << couleur << "</couleur>" << endl
+					<< "</personnage>";
 			return affichage.str();
 		}
 

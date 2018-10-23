@@ -6,6 +6,7 @@
  */
 
 #include "Personnage.h"
+#include <iostream>
 using namespace std;
 
 Personnage::Personnage() {
@@ -31,5 +32,4 @@ Personnage::Personnage(string nom, Element* element, int positionX, int position
 
 }
 Personnage::~Personnage() {
-	delete element;
 }
