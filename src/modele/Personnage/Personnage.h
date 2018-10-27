@@ -23,6 +23,7 @@ public:
 	Personnage(string nom);
 	Personnage(string nom, Element* element);
 	Personnage(string nom, Element* element, int positionX, int positionY);
+	Personnage(string nom, Element* element, int positionX, int positionY, int vie);
 	virtual ~Personnage();
 
 	const string sauvegarder() const{
@@ -49,16 +50,28 @@ public:
 			this->nom = nom;
 	}
 
+
+	const int& getVie() const {
+		return vie;
+	}
+
+	void setVie(const int& vie) {
+		this->vie = vie;
+	}
+
 	void ramasser(Element* element){
 		this->element = element;
 	}
 
+	void operator--(int);
 
 protected:
 	string nom;
 	Element* element;
 	int positionX;
 	int positionY;
+	int vie;
+
 };
  /* end namespace*/
 

@@ -65,7 +65,17 @@ int main() {
 			lettre = cin.get();
 			cin.ignore();
 			if('q' == lettre || (char)27 == lettre) boucleEnCours = false; // pour quitter avec q ou autre touche selon ASCII
-
+			if('v' == lettre){
+				 personnage = listePersonnages[0];
+				 (*personnage)--;
+				}
+			if('d' == lettre){
+				for(int position = 0; position < 5; position++)
+					{
+						personnage = listePersonnages[position];
+						cout << "vie de : " << personnage->getNom() << " : " << personnage->getVie() << endl;
+					}
+			}
 		}
 	}
 	cout << "Merci d'avoir joué !" << endl;
