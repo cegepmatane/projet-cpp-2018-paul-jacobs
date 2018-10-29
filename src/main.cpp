@@ -14,10 +14,17 @@
 #include "modele/Element/Element.h"
 #include "modele/Element/Fruit.h"
 #include "modele/Element/Packgum.h"
+
+#include <SFML/Graphics.hpp>
 using namespace std;
+using namespace sf;
 
 int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+
+	RenderWindow fenetre(VideoMode(400, 400), "SFML !");
+	CircleShape cercle(50.f);
+
 
 	Personnage personnageSansPointeur("test");
 	/*cout << personnageSansPointeur.afficher() << endl;
@@ -44,7 +51,7 @@ int main() {
 	char lettre;
 	bool boucleEnCours = true;
 
-	while(boucleEnCours)
+	/*while(boucleEnCours)
 	{
 		cout << "running";
 
@@ -77,6 +84,26 @@ int main() {
 					}
 			}
 		}
+
+	}*/
+	 while (fenetre.isOpen())
+	{
+		Event evenement;
+		while (fenetre.pollEvent(evenement))
+		{
+			if (evenement.type == Event::Closed)
+				fenetre.close();
+
+			if (evenement.type == Event::KeyPressed)
+				cout << "numero ascii de la touche "
+				<< (char) (evenement.key.code + 97)
+				<<" : "
+				<< evenement.key.code + 97
+				<< endl;
+		}
+		fenetre.clear();
+		fenetre.draw(cercle);
+		fenetre.display();
 	}
 	cout << "Merci d'avoir joué !" << endl;
 
