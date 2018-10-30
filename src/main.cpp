@@ -86,6 +86,8 @@ int main() {
 		}
 
 	}*/
+	int curseur = 0;
+
 	 while (fenetre.isOpen())
 	{
 		Event evenement;
@@ -94,15 +96,24 @@ int main() {
 			if (evenement.type == Event::Closed)
 				fenetre.close();
 
-			if (evenement.type == Event::KeyPressed)
+			if (evenement.type == Event::KeyPressed){
 				cout << "numero ascii de la touche "
 				<< (char) (evenement.key.code + 97)
 				<<" : "
 				<< evenement.key.code + 97
 				<< endl;
+
+				//changement de personnage
+				if (evenement.key.code + 97 == 157)
+				{
+					curseur ++;
+					curseur = curseur % (sizeof(listePersonnages)/sizeof(listePersonnages[0]));
+					cout << listePersonnages[curseur]->getNom() << endl;
+				}
+			}
 		}
 		fenetre.clear();
-		fenetre.draw(cercle);
+
 		fenetre.display();
 	}
 	cout << "Merci d'avoir joué !" << endl;
