@@ -27,17 +27,7 @@ int main() {
 
 
 	Personnage personnageSansPointeur("test");
-	/*cout << personnageSansPointeur.afficher() << endl;
-	cout << "ouverture du fichier ";
-	ofstream fichierPersonnage;
-	fichierPersonnage.open("data//personnage.xml");
-	fichierPersonnage << personnageSansPointeur.sauvegarder() << endl << endl;
-	fichierPersonnage << pacman.sauvegarder() << endl << endl;
-	fichierPersonnage << fantome.sauvegarder() << endl << endl;
-	//fichierPersonnage << "test" << endl << "test";
-	fichierPersonnage.close();
-	cout << "ecriture dans fichier";
-*/
+
 
 	Personnage* listePersonnages[5];
 	listePersonnages[0] = new Pacman(5,2,"Pacman",new Packgum("Flame", 10),1,1);
@@ -51,41 +41,10 @@ int main() {
 	char lettre;
 	bool boucleEnCours = true;
 
-	/*while(boucleEnCours)
-	{
-		cout << "running";
+	RectangleShape playerStruct(Vector2f(100,100));
+	playerStruct.setPosition(200,200);
 
-		ofstream fichierPersonnage;
-		fichierPersonnage.open("data//personnage.xml");
-		fichierPersonnage << "<univers>";
-		for(int position = 0; position < 5; position++)
-		{
-			personnage = listePersonnages[position];
-			fichierPersonnage << personnage->sauvegarder();
-		}
-		fichierPersonnage << "</univers>";
 
-		fichierPersonnage << endl;
-
-		if (cin.rdbuf() && cin.rdbuf()->in_avail() >= 0)
-		{
-			lettre = cin.get();
-			cin.ignore();
-			if('q' == lettre || (char)27 == lettre) boucleEnCours = false; // pour quitter avec q ou autre touche selon ASCII
-			if('v' == lettre){
-				 personnage = listePersonnages[0];
-				 (*personnage)--;
-				}
-			if('d' == lettre){
-				for(int position = 0; position < 5; position++)
-					{
-						personnage = listePersonnages[position];
-						cout << "vie de : " << personnage->getNom() << " : " << personnage->getVie() << endl;
-					}
-			}
-		}
-
-	}*/
 	int curseur = 0;
 
 	 while (fenetre.isOpen())
