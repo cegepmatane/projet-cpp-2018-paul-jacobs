@@ -151,8 +151,6 @@ int main() {
 			anim--;
 		}
 
-		*listePersonnages[curseur]->positionX=position.x;
-		*listePersonnages[curseur]->positionY=position.y;
 		structureJoueur.setPosition(position.x,position.y);
 		structureJoueur.setTextureRect(IntRect(tailleTexture.x*(14*2)+tailleTexture.x/4*2+tailleTexture.x*anim,
 				tailleTexture.y*listePersonnages[curseur]->getPositionImage(),
