@@ -38,10 +38,9 @@ int main() {
 
 
 	Personnage* personnage;
-	char lettre;
 
 	Sprite structureJoueur;
-	structureJoueur.setPosition(0,0);
+
 
 	Texture textureJeu;
 	textureJeu.loadFromFile("src//pacman.png");
@@ -58,6 +57,7 @@ int main() {
 
 
 	int curseur = 0;
+	Vector2u position(0,0);
 
 	 while (fenetre.isOpen())
 	{
@@ -75,16 +75,39 @@ int main() {
 				<< endl;
 
 				//changement de personnage
-				if (evenement.key.code + 97 == 157)
-				{
-					curseur ++;
-					curseur = curseur % (sizeof(listePersonnages)/sizeof(listePersonnages[0]));
-					cout << listePersonnages[curseur]->getNom() << endl;
+				switch (evenement.key.code + 97){
+
+
+					case 157 :
+						curseur ++;
+						curseur = curseur % (sizeof(listePersonnages)/sizeof(listePersonnages[0]));
+						break;
+
+					case 168 :
+						position.x-=tailleTexture.x;
+						break;
+
+					case 169 :
+						position.x+=tailleTexture.x;
+						break;
+
+					case 170 :
+						position.y-=tailleTexture.y;
+						break;
+
+					case 171 :
+						position.y+=tailleTexture.y;
+						break;
+
+					default :
+						cout << listePersonnages[curseur]->getNom() << endl;
 				}
+
 			}
 		}
 		fenetre.clear();
 
+		structureJoueur.setPosition(position.x,position.y);
 		structureJoueur.setTextureRect(IntRect(tailleTexture.x*(14*2)+tailleTexture.x/4*2,
 				tailleTexture.y*listePersonnages[curseur]->getPositionImage(),
 				tailleTexture.x,
