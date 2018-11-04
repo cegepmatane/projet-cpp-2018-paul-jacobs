@@ -14,6 +14,7 @@
 #include "modele/Element/Element.h"
 #include "modele/Element/Fruit.h"
 #include "modele/Element/Packgum.h"
+#include <Windows.h>
 
 #include <SFML/Graphics.hpp>
 using namespace std;
@@ -22,15 +23,13 @@ using namespace sf;
 
 void sauvegarder(Personnage** listePersonnages)
 {
-	Personnage* personnage;
 
 	ofstream fichierPersonnage;
 	fichierPersonnage.open("data//personnage.xml");
 	fichierPersonnage << "<univers>";
 	for(int position = 0; position < 5; position++)
 	{
-		personnage = listePersonnages[position];
-		fichierPersonnage << personnage->sauvegarder();
+		fichierPersonnage << listePersonnages[position]->sauvegarder();
 	}
 	fichierPersonnage << "</univers>";
 	fichierPersonnage << endl;
@@ -59,6 +58,7 @@ int main() {
 
 
 	Sprite structureJoueur;
+	Sprite Background;
 
 
 	Texture textureJeu;
@@ -78,6 +78,8 @@ int main() {
 	int curseur = 0;
 	Vector2u position(0,0);
 	Personnage p;
+	int anim = 0;
+	Time delayTime;
 
 	 while (fenetre.isOpen())
 	{
@@ -103,6 +105,7 @@ int main() {
 
 					case 156 :
 						(*listePersonnages[curseur])--;
+						anim=12;
 						cout << listePersonnages[curseur]->getNom()
 							<< " a : "
 							<< listePersonnages[curseur]->getVie()
@@ -144,8 +147,13 @@ int main() {
 		}
 		fenetre.clear();
 
+		if (anim>0){
+			cout << anim << endl;
+			anim--;
+		}
+
 		structureJoueur.setPosition(position.x,position.y);
-		structureJoueur.setTextureRect(IntRect(tailleTexture.x*(14*2)+tailleTexture.x/4*2,
+		structureJoueur.setTextureRect(IntRect(tailleTexture.x*(14*2)+tailleTexture.x/4*2+tailleTexture.x*anim,
 				tailleTexture.y*listePersonnages[curseur]->getPositionImage(),
 				tailleTexture.x,
 				tailleTexture.y));
@@ -153,6 +161,9 @@ int main() {
 		fenetre.draw(structureJoueur);
 		fenetre.display();
 		sauvegarder(listePersonnages);
+		delayTime = milliseconds(1);
+		Sleep(50);
+
 	}
 	cout << "Merci d'avoir joué !" << endl;
 
