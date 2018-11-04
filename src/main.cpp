@@ -79,7 +79,6 @@ int main() {
 	Vector2u position(0,0);
 	Personnage p;
 	int anim = 0;
-	Time delayTime;
 
 	 while (fenetre.isOpen())
 	{
@@ -152,6 +151,8 @@ int main() {
 			anim--;
 		}
 
+		*listePersonnages[curseur]->positionX=position.x;
+		*listePersonnages[curseur]->positionY=position.y;
 		structureJoueur.setPosition(position.x,position.y);
 		structureJoueur.setTextureRect(IntRect(tailleTexture.x*(14*2)+tailleTexture.x/4*2+tailleTexture.x*anim,
 				tailleTexture.y*listePersonnages[curseur]->getPositionImage(),
@@ -161,7 +162,7 @@ int main() {
 		fenetre.draw(structureJoueur);
 		fenetre.display();
 		sauvegarder(listePersonnages);
-		delayTime = milliseconds(1);
+
 		Sleep(50);
 
 	}
