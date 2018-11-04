@@ -14,6 +14,7 @@ public:
 	Fantome();
 	Fantome(string couleur);
 	Fantome(string pcouleur, string pnom, Element* pelement, int ppositionX, int ppositionY);
+	Fantome(string pcouleur, string pnom, Element* pelement, int ppositionX, int ppositionY, int positionImage);
 	virtual ~Fantome();
 
 	const string sauvegarder() const{

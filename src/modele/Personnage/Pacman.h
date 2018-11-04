@@ -15,6 +15,7 @@ public:
 	Pacman();
 	Pacman(int vie, int tailleDeBouche);
 	Pacman(int vie, int tailleDeBouche, string pnom, Element* pelement, int ppositionX, int ppositionY);
+	Pacman(int vie, int tailleDeBouche, string pnom, Element* pelement, int ppositionX, int ppositionY, int positionImage);
 	virtual ~Pacman();
 
 	const string sauvegarder() const{

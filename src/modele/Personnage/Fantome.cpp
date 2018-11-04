@@ -21,6 +21,16 @@ Fantome::Fantome(string pcouleur, string pnom, Element* pelement, int ppositionX
 	positionY = ppositionY;
 	couleur = pcouleur;
 }
+
+Fantome::Fantome(string pcouleur, string pnom, Element* pelement, int ppositionX, int ppositionY, int ppositionImage) {
+		nom=pnom;
+		element = pelement;
+		positionX = ppositionX;
+		positionY = ppositionY;
+		positionImage = ppositionImage;
+
+}
+
 Fantome::~Fantome() {
 }
 

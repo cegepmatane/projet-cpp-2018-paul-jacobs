@@ -30,16 +30,15 @@ int main() {
 
 
 	Personnage* listePersonnages[5];
-	listePersonnages[0] = new Pacman(5,2,"Pacman",new Packgum("Flame", 10),1,1);
-	listePersonnages[1] = new Fantome("bleu","fantome",new Fruit("speedboost", 10),1,1);
-	listePersonnages[2] = new Fantome("rouge","fantome",new Fruit("speedboost", 10),1,1);
-	listePersonnages[3] = new Fantome("jaune","fantome",new Fruit("speedboost", 10),1,1);
-	listePersonnages[4] = new Fantome("vert","fantome",new Fruit("speedboost", 10),1,1);
+	listePersonnages[0] = new Pacman(5,2,"Pacman",new Packgum("Flame", 10),1,1,0);
+	listePersonnages[1] = new Fantome("bleu","fantome",new Fruit("speedboost", 10),1,1,4);
+	listePersonnages[2] = new Fantome("rouge","fantome",new Fruit("speedboost", 10),1,1,5);
+	listePersonnages[3] = new Fantome("jaune","fantome",new Fruit("speedboost", 10),1,1,6);
+	listePersonnages[4] = new Fantome("vert","fantome",new Fruit("speedboost", 10),1,1,7);
 
 
 	Personnage* personnage;
 	char lettre;
-	bool boucleEnCours = true;
 
 	Sprite structureJoueur;
 	structureJoueur.setPosition(0,0);
@@ -50,15 +49,12 @@ int main() {
 	Vector2u tailleTexture = textureJeu.getSize();
 
 	tailleTexture.x /= 3*14;
-	tailleTexture.y /=14;
+	tailleTexture.y /=15;
 
 
 
 
 	structureJoueur.setTexture(textureJeu);
-	structureJoueur.setTextureRect(IntRect(tailleTexture.x*(14*2)+tailleTexture.x/4*2,tailleTexture.y*0,tailleTexture.x,tailleTexture.y));
-	//structureJoueur.setTextureRect(IntRect(200,200,200,200));
-	structureJoueur.setColor(sf::Color(255, 255, 255, 200));
 
 
 	int curseur = 0;
@@ -88,6 +84,11 @@ int main() {
 			}
 		}
 		fenetre.clear();
+
+		structureJoueur.setTextureRect(IntRect(tailleTexture.x*(14*2)+tailleTexture.x/4*2,
+				tailleTexture.y*listePersonnages[curseur]->getPositionImage(),
+				tailleTexture.x,
+				tailleTexture.y));
 
 		fenetre.draw(structureJoueur);
 		fenetre.display();

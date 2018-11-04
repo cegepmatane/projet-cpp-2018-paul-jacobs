@@ -29,6 +29,17 @@ Pacman::Pacman(int pvie, int ptailleDeBouche, string pnom, Element* pelement, in
 
 }
 
+Pacman::Pacman(int pvie, int ptailleDeBouche, string pnom, Element* pelement, int ppositionX, int ppositionY, int ppositionImage) {
+		nom=pnom;
+		element = pelement;
+		positionX = ppositionX;
+		positionY = ppositionY;
+		vie = pvie;
+		tailleDeBouche = ptailleDeBouche;
+		positionImage = ppositionImage;
+
+}
+
 Pacman::~Pacman() {
 }
 

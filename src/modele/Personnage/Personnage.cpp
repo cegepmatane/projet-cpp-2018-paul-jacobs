@@ -15,6 +15,7 @@ Personnage::Personnage() {
 	this->positionX = 0;
 	this->positionY = 0;
 	this->vie = 1;
+	this->positionImage=0;
 }
 
 Personnage::Personnage(string nom) {
@@ -23,6 +24,7 @@ Personnage::Personnage(string nom) {
 	this->positionX = 0;
 	this->positionY = 0;
 	this->vie = 1;
+	this->positionImage=0;
 }
 
 
@@ -32,6 +34,7 @@ Personnage::Personnage(string nom, Element* element, int positionX, int position
 	this->positionX = positionX;
 	this->positionY = positionY;
 	this->vie = 1;
+	this->positionImage=0;
 }
 
 Personnage::Personnage(string nom, Element* element, int positionX, int positionY, int vie) {
@@ -40,6 +43,16 @@ Personnage::Personnage(string nom, Element* element, int positionX, int position
 	this->positionX = positionX;
 	this->positionY = positionY;
 	this->vie = vie;
+	this->positionImage=0;
+}
+
+Personnage::Personnage(string nom, Element* element, int positionX, int positionY, int vie, int positionImage) {
+	this->nom=nom;
+	this->element = element;
+	this->positionX = positionX;
+	this->positionY = positionY;
+	this->vie = vie;
+	this->positionImage=0;
 }
 
 

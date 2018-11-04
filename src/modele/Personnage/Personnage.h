@@ -24,6 +24,7 @@ public:
 	Personnage(string nom, Element* element);
 	Personnage(string nom, Element* element, int positionX, int positionY);
 	Personnage(string nom, Element* element, int positionX, int positionY, int vie);
+	Personnage(string nom, Element* element, int positionX, int positionY, int vie, int positionImage);
 	virtual ~Personnage();
 
 	const string sauvegarder() const{
@@ -59,6 +60,14 @@ public:
 		this->vie = vie;
 	}
 
+	const int& getPositionImage() const {
+		return positionImage;
+	}
+
+	void setPositionImage(const int& positionImage) {
+		this->positionImage = positionImage;
+	}
+
 	void ramasser(Element* element){
 		this->element = element;
 	}
@@ -71,6 +80,7 @@ protected:
 	int positionX;
 	int positionY;
 	int vie;
+	int positionImage;
 
 };
  /* end namespace*/
