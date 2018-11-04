@@ -77,6 +77,9 @@ int main() {
 				//changement de personnage
 				switch (evenement.key.code + 97){
 
+				case 133 :
+					fenetre.close();
+					break;
 
 					case 157 :
 						curseur ++;
