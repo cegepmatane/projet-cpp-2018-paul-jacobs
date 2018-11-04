@@ -36,7 +36,6 @@ public:
 		}
 
 private:
-	int vie;
 	int tailleDeBouche;
 };
 

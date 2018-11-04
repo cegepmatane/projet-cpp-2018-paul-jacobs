@@ -42,4 +42,3 @@ Pacman::Pacman(int pvie, int ptailleDeBouche, string pnom, Element* pelement, in
 
 Pacman::~Pacman() {
 }
-

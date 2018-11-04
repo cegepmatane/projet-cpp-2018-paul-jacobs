@@ -46,13 +46,13 @@ Personnage::Personnage(string nom, Element* element, int positionX, int position
 	this->positionImage=0;
 }
 
-Personnage::Personnage(string nom, Element* element, int positionX, int positionY, int vie, int positionImage) {
+Personnage::Personnage(string nom, Element* element, int positionX, int positionY, int vie, int ppositionImage) {
 	this->nom=nom;
 	this->element = element;
 	this->positionX = positionX;
 	this->positionY = positionY;
 	this->vie = vie;
-	this->positionImage=0;
+	this->positionImage=ppositionImage;
 }
 
 
@@ -61,6 +61,5 @@ Personnage::~Personnage() {
 
 void Personnage::operator--(int value)
 {
-	cout << "operator";
 	this->setVie(this->getVie()-1);
 }

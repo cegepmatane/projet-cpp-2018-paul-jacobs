@@ -34,6 +34,7 @@ void sauvegarder(Personnage** listePersonnages)
 	}
 	fichierPersonnage << "</univers>";
 	fichierPersonnage << endl;
+	fichierPersonnage.close();
 }
 
 
@@ -49,7 +50,7 @@ int main() {
 
 
 	Personnage* listePersonnages[5];
-	listePersonnages[0] = new Pacman(5,2,"Pacman",new Packgum("Flame", 10),1,1,0);
+	listePersonnages[0] = new Pacman(10,2,"Pacman",new Packgum("Flame", 10),1,1,0);
 	listePersonnages[1] = new Fantome("bleu","fantome",new Fruit("speedboost", 10),1,1,4);
 	listePersonnages[2] = new Fantome("rouge","fantome",new Fruit("speedboost", 10),1,1,5);
 	listePersonnages[3] = new Fantome("jaune","fantome",new Fruit("speedboost", 10),1,1,6);
@@ -76,6 +77,7 @@ int main() {
 
 	int curseur = 0;
 	Vector2u position(0,0);
+	Personnage p;
 
 	 while (fenetre.isOpen())
 	{
@@ -95,9 +97,18 @@ int main() {
 				//changement de personnage
 				switch (evenement.key.code + 97){
 
-				case 133 :
-					fenetre.close();
-					break;
+					case 133 :
+						fenetre.close();
+						break;
+
+					case 156 :
+						(*listePersonnages[curseur])--;
+						cout << listePersonnages[curseur]->getNom()
+							<< " a : "
+							<< listePersonnages[curseur]->getVie()
+							<< " pv"
+							<< endl;
+							break;
 
 					case 157 :
 						curseur ++;
@@ -121,7 +132,12 @@ int main() {
 						break;
 
 					default :
-						cout << listePersonnages[curseur]->getNom() << endl;
+						cout << listePersonnages[curseur]->getNom()
+							<< " a : "
+							<< listePersonnages[curseur]->getVie()
+							<< " pv"
+							<< endl;
+						break;
 				}
 
 			}
