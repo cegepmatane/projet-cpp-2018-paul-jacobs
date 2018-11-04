@@ -41,8 +41,24 @@ int main() {
 	char lettre;
 	bool boucleEnCours = true;
 
-	RectangleShape playerStruct(Vector2f(100,100));
-	playerStruct.setPosition(200,200);
+	Sprite structureJoueur;
+	structureJoueur.setPosition(0,0);
+
+	Texture textureJeu;
+	textureJeu.loadFromFile("src//pacman.png");
+
+	Vector2u tailleTexture = textureJeu.getSize();
+
+	tailleTexture.x /= 3*14;
+	tailleTexture.y /=14;
+
+
+
+
+	structureJoueur.setTexture(textureJeu);
+	structureJoueur.setTextureRect(IntRect(tailleTexture.x*(14*2)+tailleTexture.x/4*2,tailleTexture.y*0,tailleTexture.x,tailleTexture.y));
+	//structureJoueur.setTextureRect(IntRect(200,200,200,200));
+	structureJoueur.setColor(sf::Color(255, 255, 255, 200));
 
 
 	int curseur = 0;
@@ -73,6 +89,7 @@ int main() {
 		}
 		fenetre.clear();
 
+		fenetre.draw(structureJoueur);
 		fenetre.display();
 	}
 	cout << "Merci d'avoir joué !" << endl;
