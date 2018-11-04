@@ -28,7 +28,6 @@ public:
 	virtual ~Personnage();
 
 	const string sauvegarder() const{
-		cout << "ouverture du fichier ";
 		stringstream affichage;
 		string elementString = "";
 		if (element){

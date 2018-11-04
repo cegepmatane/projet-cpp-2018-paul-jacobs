@@ -19,6 +19,25 @@
 using namespace std;
 using namespace sf;
 
+
+void sauvegarder(Personnage** listePersonnages)
+{
+	Personnage* personnage;
+
+	ofstream fichierPersonnage;
+	fichierPersonnage.open("data//personnage.xml");
+	fichierPersonnage << "<univers>";
+	for(int position = 0; position < 5; position++)
+	{
+		personnage = listePersonnages[position];
+		fichierPersonnage << personnage->sauvegarder();
+	}
+	fichierPersonnage << "</univers>";
+	fichierPersonnage << endl;
+}
+
+
+
 int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 
@@ -37,7 +56,6 @@ int main() {
 	listePersonnages[4] = new Fantome("vert","fantome",new Fruit("speedboost", 10),1,1,7);
 
 
-	Personnage* personnage;
 
 	Sprite structureJoueur;
 
@@ -118,6 +136,7 @@ int main() {
 
 		fenetre.draw(structureJoueur);
 		fenetre.display();
+		sauvegarder(listePersonnages);
 	}
 	cout << "Merci d'avoir joué !" << endl;
 
